@@ -1,4 +1,25 @@
-﻿document.addEventListener("DOMContentLoaded", function () {
+﻿// the screensaver glue: making sure we quit when needed
+var ipc = require('ipc');
+var sendQuit = function(){
+    ipc.send('sendQuit');
+}
+
+document.addEventListener('keydown', sendQuit);
+document.addEventListener('mousedown', sendQuit);
+
+// Also quit on mouse movement, but delay mousemove tracking, otherwise we'll close immediately
+setTimeout( function() {
+    var treshold = 5;
+    document.addEventListener('mousemove', function(e) {
+        if (treshold * treshold < e.movementX * e.movementX
+            + e.movementY * e.movementY) {
+                sendQuit();
+            }
+    });
+}, 3000);
+
+// The actual screensaver
+document.addEventListener("DOMContentLoaded", function () {
     document.removeEventListener("DOMContentLoaded", arguments.callee, false);
     
     // canvas setup
