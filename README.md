@@ -6,7 +6,7 @@ Press F11 for the best experience (and try to ignore your CPU fans crying for he
 
 # How do I actually use it as a screensaver?
 
-1. Download *cacophony-of-pixels-dist.zip* from the project's [Itch page](http://madve2.itch.io/cacophony-of-pixels)
+1. Download ```cacophony-of-pixels-dist.zip``` from the project's [Itch page](http://madve2.itch.io/cacophony-of-pixels)
 2. Right-click ```cacophony-of-pixels.scr```, select *Install*
 3. Windows' Screen Saver dialog should open, letting you test the thing and actually set it as a screensaver (I wouldn't recommend that though).
 
@@ -30,10 +30,10 @@ electron main.js /s
 
 To make it work as a screensaver:
 
-1. Create a new folder, called "dist" or something.
+1. Create a new folder, called ```dist``` or something.
 2. Copy everything from ```%APPDATA%\npm\node_modules\electron-prebuilt\dist``` to it.
-3. Create a folder called "app" in the "resources" folder, and copy the app files (*.js, index.html, package.json) to it.
-4. Rename "electron.exe" to "cacophony-of-pixels*.scr*", to turn it into a screensaver.
+3. Create a folder called ```app``` in the ```resources``` folder, and copy the app files *(both .js files, index.html, package.json)* to it.
+4. Rename ```electron.exe``` to ```cacophony-of-pixels.scr```, to turn it into a screensaver.
 5. Done!
 
 There are some nice electron packagers if you'd prefer that over these manual steps, but I didn't have the time to experiment with those before the jam.
